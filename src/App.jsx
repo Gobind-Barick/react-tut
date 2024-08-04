@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Home from './Home'
 import UsingProps from './UsingProps'
+import { Link, BrowserRouter } from 'react-router-dom'
 
 
 
@@ -16,8 +17,12 @@ const App = () => {
   }
 
   return (
+    <BrowserRouter>
     <div style={{backgroundColor:"red", color:"white" , fontSize:"100px",padding:"20px"}}>
       <Home/> 
+      <Link to="/">home</Link>
+      <Link to="/contacts">contacts</Link>
+
       
       <input style={{padding:"20px",width:"500px"}} type="number"  value={inputValue}/> 
       <button onClick={increment} style={{padding:"20px", marginLeft:"2px"}} >+</button>
@@ -25,6 +30,7 @@ const App = () => {
       
       <UsingProps name={"RadheShyam"}/>
        </div>
+       </BrowserRouter>
   )
 }
 
